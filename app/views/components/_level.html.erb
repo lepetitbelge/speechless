@@ -1,0 +1,4 @@
+<% level = user.level %>
+<% (1..5).each do |possible_level| %>
+    <i class="fas fa-microphone-alt level <%= "level-inactive" if possible_level > level %>"></i>
+<% end %>

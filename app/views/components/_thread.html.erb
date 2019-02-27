@@ -4,7 +4,7 @@
       <%= image_tag "#{contribution.user.photo_url}", class: "user-avatar-extra-small" %>
     </div>
     <div class="contributor-details">
-      <p class="contribution-username"><%= contribution.user.username %></p>
+      <p class="contribution-username"><%= contribution.user.username %><%= render "components/level", user: contribution.user %></p>
       <p class="contribution-date"><%= contribution.created_at.strftime("%d.%m.%Y") %></p>
     </div>
   </div>
@@ -27,7 +27,7 @@
   <div class="thread-comments classic-card-style-comment padding-t-5">
     <div class="contribution-contributor-comment">
       <div class="contributor-details">
-        <p class="contribution-username"><%= comment.user.username %></p>
+        <p class="contribution-username"><%= comment.user.username %><%= render "components/level", user: comment.user %></p>
         <p class="contribution-date"><%= comment.created_at.strftime("%d.%m.%Y") %></p>
       </div>
     </div>
@@ -56,4 +56,3 @@
       <%= f.text_field :content %>
       <%= f.submit 'Send', method: :post %>
       <% end %>
-
