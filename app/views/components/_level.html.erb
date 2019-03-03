@@ -1,0 +1,7 @@
+<% level = user.level %>
+<% (1..5).each do |possible_level| %>
+  <i class="fas fa-microphone-alt level"></i>
+  <% break if possible_level >= level %>
+<% end %>
+
+<%#= render "components/level", user: comment.user %>
